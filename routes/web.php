@@ -16,10 +16,8 @@
 
 
 // Admin Ultilities
-
   Route::group(['middleware' => ['activeUser']], function () {
     Route::get('/admin', 'AdminController@index')->name('admin');
-
     // Admin Post
     Route::get('/admin/posts', 'AdminPostsController@index')->name('admin_posts');
     Route::get('/admin/posts/create', 'AdminPostsController@create')->name('admin_posts.create');
@@ -31,11 +29,8 @@
 
   });
 
-// Admin User
-  Route::group(['middleware' => ['activeUser', 'admin']], function () {
-    Route::get('/admin/categories', 'AdminController@index')->name('admin_categories');
-    Route::get('/admin/site', 'AdminController@index')->name('admin_site');
-    // Users Controller
+// Admin User - Users Controller
+  Route::group(['middleware' => ['activeUser']], function () {
     Route::get('/admin/users', 'AdminUsersController@index')->name('admin_users');
     Route::get('/admin/users/create', 'AdminUsersController@create')->name('admin_users.create');
     Route::Post('/admin/users', 'AdminUsersController@store')->name('admin_users.store');
@@ -43,5 +38,16 @@
     Route::get('/admin/users/{user}/edit', 'AdminUsersController@edit')->name('admin_users.edit');
     Route::patch('/admin/users/{user}', 'AdminUsersController@update')->name('admin_users.update');
     Route::delete('/admin/users/{user}', 'AdminUsersController@destroy')->name('admin_users.destroy');
-
   });
+  // Admin Only -  Category
+  Route::group(['middleware' => ['admin']], function () {
+  Route::get('/admin/categories', 'AdminCategoriesController@index')->name('admin_categories');
+  Route::post('/admin/categories', 'AdminCategoriesController@store')->name('admin_categories.store');
+  Route::get('/admin/categories/{category}/edit', 'AdminCategoriesController@edit')->name('admin_categories.edit');
+  Route::patch('/admin/categories/{category}', 'AdminCategoriesController@update')->name('admin_categories.update');
+  Route::delete('/admin/categories/{category}', 'AdminCategoriesController@destroy')->name('admin_categories.destroy');
+  });
+
+
+
+  Route::get('/admin/site', 'AdminController@index')->name('admin_site');

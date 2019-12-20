@@ -16,6 +16,10 @@
             @endif
           </div>
       </div>
+      <div class=" col-11 text-right">
+        <a href="{{route('admin_posts.create')}}" >
+          <button type="submit" class="btn btn-secondary text-right">Create Post</button></a>
+      </div>
       <div class="container">
         <h2>Posts Table</h2>
         <table class="table table-bordered table-hover table-striped text-center">
@@ -38,8 +42,8 @@
                 <td>
                   <img src="{{url('/images/posts/'.$post->photo['filename'])}}" width="50px" alt="">
                 </td>
-               <td><a href="{{ route('admin_posts.show', ['post' => $post]) }}">{{$post->name}}</a></td>
-               <td>{{ $post->category->name }}</td>
+               <td><a href="{{ route('admin_posts.edit', ['post' => $post]) }}">{{$post->name}}</a></td>
+               <td>{{ $post->category['name'] }}</td>
                 <td>{{$post->user['name']}}</td>
                 <td>{{$post->created_at->diffForHumans()}}</td>
                 <td>{{$post->updated_at->diffForHumans()}}</td>

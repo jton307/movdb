@@ -4,6 +4,7 @@
 
   use App\Category;
   use App\Http\Requests\AddPostRequest;
+  use App\Http\Requests\EditPostRequest;
   use App\Photo;
   use App\Post;
   use Illuminate\Http\Request;
@@ -16,10 +17,9 @@
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Post $post)
     {
       $posts = Post::orderBy('id', 'desc')->paginate(5);
-
       return view('admin.posts.index', compact('posts'));
 
     }
@@ -47,7 +47,6 @@
       $input = $request->all();
       if ($file = $request->file('file')) {
         $name = time().$file->getClientOriginalName();
-        dd($name);
         $file->move('images/posts', $name);
         $image = Photo::create(['filename' => $name]);
         $input['photo_id'] = $image->id;
@@ -58,17 +57,6 @@
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Post  $post
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Post $post)
-    {
-      //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Post  $post
@@ -76,7 +64,8 @@
      */
     public function edit(Post $post)
     {
-      //
+      $categories = Category::all();
+   return view('admin.posts.edit', compact('post', 'categories'));
     }
 
     /**
@@ -86,10 +75,21 @@
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(EditPostRequest $request, Post $post)
     {
-      //
-    }
+      $input = $request->all();
+
+        if ($file = $request->file('file')) {
+          $name = time().$file->getClientOriginalName();
+          $file->move('images/posts', $name);
+          $image = Photo::create(['filename' => $name]);
+          $input['photo_id'] = $image->id;
+        }
+        $input['user_id'] = Auth::user()->id;
+        $post->update($input);
+        return redirect(route('admin_posts'))->with('message', "Post with title: $post->name is updated");
+      }
+
 
     /**
      * Remove the specified resource from storage.
@@ -99,6 +99,8 @@
      */
     public function destroy(Post $post)
     {
-      //
+
+      $post->delete();
+      return redirect(route('admin_posts'))->with('delete_message', "The Post has been deleted" );
     }
   }

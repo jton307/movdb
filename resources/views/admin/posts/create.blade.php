@@ -21,7 +21,13 @@
       <div class="col-sm-9">
         <div class="container form-group">
           <div class="form-group">
-            <label for="name" class="font-weight-bold">Post : </label>
+            <label for="title" class="font-weight-bold">Post Title : </label>
+            <input type="text" name="title" class="form-control" value="{{ old('post') ?? $post->title}}" placeholder="Enter the title for the post">
+            <span class="alert text-danger">{{ $errors->first('title') }}</span>
+          </div>
+
+          <div class="form-group">
+            <label for="name" class="font-weight-bold">Name : </label>
             <input type="text" name="name" class="form-control" value="{{ old('post') ?? $post->name}}" placeholder="Enter the post title">
             <span class="alert text-danger">{{ $errors->first('name') }}</span>
           </div>
@@ -36,9 +42,13 @@
             <span class="alert text-danger">{{ $errors->first('category_id') }}</span>
           </div>
           <div class="form-group">
-
-            <labecl for="review" class="font-weight-bold">Review: </labecl>
-            <textarea name="review" id="editor" class="form-control" rows="15" placeholder="Insert your comment"></textarea>
+            <labecl for="description" class="font-weight-bold">Description: </labecl>
+            <textarea name="description" class="form-control" rows="1"></textarea>
+            <span class="alert text-danger">{{ $errors->first('description') }}</span>
+          </div>
+          <div class="form-group">
+            <label for="review" class="font-weight-bold">Review: </label>
+            <textarea name="review" id="editor" class="form-control" rows="15"></textarea>
             <span class="alert text-danger">{{ $errors->first('review') }}</span>
           </div>
           {{--          BUTTON--}}
