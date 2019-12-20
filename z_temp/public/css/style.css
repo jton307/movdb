@@ -1,0 +1,252 @@
+
+
+/*====== HEAD ==========*/
+body {
+    font-family: 'Roboto';
+}
+
+.nav-user-img {
+    color: #cecece;
+}
+.nav-user-img:hover {
+    color: #1e1e1e;
+}
+
+.navbar {
+    background-color: #ffffff;
+    color: #e6313d !important;
+    border-bottom: 1px solid #c5c5c5;
+}
+
+.collapse .nav-link {
+    color: #e6313d !important;
+}
+
+.navbar-brand {
+    font-size: 32px;
+    color: #4d4d4d !important;
+    font-family: 'Righteous';
+}
+
+
+
+.slick-item {
+    height:500px;
+    background-position: center !important;
+    background-size: cover !important;
+}
+
+.slick-wrapper {
+    display:block;
+    height: 100%;
+}
+
+.slick-content {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
+background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+height: 100%;
+position: relative;
+}
+
+.slick-content .wrapper {
+    width: 253px;
+    position: fixed;
+    bottom: 0;
+    padding: 20px;
+}
+
+.slick-content .wrapper .slick-category {
+    background: #252525;
+    display: inline-block;
+    padding: 5px 10px;
+    color: #ffffff !important;
+    font-weight: 300;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.slick-content .wrapper .slick-title {
+    font-family: 'Oswald', cursive;
+    width: 100%;
+    min-height: 72px;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+.slick-content .wrapper .slick-movie {
+    background: #e6313d;
+    display: inline-block;
+    padding: 5px 10px;
+    color: #ffffff !important;
+    font-weight: 300;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.home_post_list .item {
+    margin: 10px 0px;
+    border-bottom: 1px solid #bebebe;
+}
+
+.home_post_list .item .image {
+height: 400px;
+background-size: cover !important;
+background-position: center !important;
+}
+
+.home_post_list .item .image span {
+    display: block;
+    height: 100%;
+    background: #00000080;
+}
+
+.home_post_list .item .image span:hover { 
+    transition: background-color 0.5s ease;
+    background:none;
+}
+
+.home_post_list .item .category,
+.home_post_list .item .name {
+    color: #e6313d;
+    display: inline-block;
+    padding: 10px 10px;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+.home_post_list .item .name { 
+    color: #282828;
+}
+
+.home_post_list .item .title {
+    color: #333333;
+    font-family: Oswald;
+    font-size: 22px;
+}
+
+.home_post_list .item .text_wrapper {
+    padding:10px;
+}
+
+
+.home_post_list .item .desc {
+    font-size: 12px;
+    margin: 10px 0px;
+}
+
+.home_post_list {
+    margin: 40px 0px;
+}
+
+.home_post_list h3 {
+    font-family: Oswald;
+    color: #e6313d;
+    font-size: 30px;
+}
+
+.home_post_list .item .date {
+    font-size: 12px;
+    padding: 0px 10px;
+    font-weight: 300;
+}
+
+.post_container .wrapper {
+    margin: 50px 0px;
+}
+
+.post_container .wrapper .date {
+    text-align: center;
+    color: #b7b7b7;
+    text-transform: uppercase;
+    font-family: Oswald;
+}
+
+.post_container .title {
+    text-align: center;
+    font-size: 60px;
+    font-family: Oswald;
+}
+
+.post_container .reviewer_top {
+    text-align: center;
+    color: #bdbdbd;
+    font-size: 20px;
+    font-family: Oswald;
+}
+.post_container .reviewer_top span {
+    color: #e6313d;
+}
+
+.post_container .review_container {
+    margin: 30px 0px;
+}
+
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+  }
+  blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+  blockquote p {
+    display: inline;
+  }
+
+
+  .home_top_post_list {
+    margin: 40px 0px;
+    border-left: 1px solid #e4e4e4;
+    padding-left: 10px;
+  }
+
+  .home_top_post_list h3{
+  font-family: Oswald;
+  color: #e6313d;
+  font-size: 30px;
+  }
+
+  .home_top_post_list .item {
+    color: #313131;
+    text-decoration: none;
+    margin-bottom: 6px;
+    display: block;
+    border-bottom: 1px solid #e3e3e3;
+  }
+
+  .home_top_post_list .item .name {
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.home_top_post_list .item .title {
+    font-size: 14px;
+}
+
+footer {
+    border-top: 5px solid #cacaca;
+    text-align: center;
+}
+
+
+footer .logo {
+    font-size: 32px;
+    color: #4d4d4d !important;
+    font-family: 'Righteous';
+}
+
+footer .site_nfo {
+    margin: 10px 0px;
+    font-size: 13px;
+}
+
